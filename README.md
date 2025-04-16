@@ -1,60 +1,36 @@
-# 📘 Projeto Prático: Sistema de Entrega e Notificação com Design Patterns
+# 📦 Projeto de Entregas com Adapter, Strategy e Observer
 
-## 🌟 Objetivo
-Este projeto tem como objetivo praticar a implementação dos padrões de projeto **Adapter**, **Strategy** e **Observer** utilizando **Java com Spring Boot**, simulando um sistema de logística de uma plataforma de e-commerce.
-
----
-
-## 📖 Contexto
-Você foi contratado para desenvolver um módulo de **logística**. Esse módulo deve calcular valores de frete com diferentes transportadoras, integrar-se com uma transportadora externa e notificar o cliente e equipe interna após o processamento de uma entrega.
+## 🎯 Objetivo
+Este projeto foi desenvolvido como parte de uma atividade prática em grupo para aplicação dos padrões de projeto **Adapter**, **Strategy** e **Observer** utilizando Java com Spring Boot.
 
 ---
 
-## 📊 Requisitos do Sistema
+## 🧱 Descrição do sistema
 
-### 1. Cálculo de Frete (**Strategy Pattern**)
-- O sistema deve oferecer três modalidades de entrega:
-  - Entrega Expressa
-  - Entrega Econômica
-  - Transportadora Terceirizada
-- Cada modalidade deve ter uma **regra de cálculo de frete diferente**.
-- A escolha da modalidade deve ser feita de forma **dinâmica**, via parâmetro na requisição.
+O sistema simula o processamento de pedidos de uma plataforma de e-commerce. Ao cadastrar um pedido, o sistema:
 
-### 2. Integração com Transportadora Externa (**Adapter Pattern**)
-- Uma transportadora externa fornece uma API que não segue os padrões do seu sistema.
-- Deve-se criar um **adaptador** que permita integrar a API externa sem alterar o funcionamento interno do sistema.
-
-### 3. Notificações de Entrega (**Observer Pattern**)
-- Após concluir a entrega, o sistema deve:
-  - Enviar um e-mail de confirmação ao cliente
-  - Registrar um log da operação
-  - Enviar uma mensagem para a equipe de atendimento
-- Cada uma dessas tarefas deve ser tratada por um **observador independente**, notificado automaticamente.
+1. Calcula o valor do frete com base na **estratégia de entrega** escolhida (`expressa`, `economica`, `transportadora`).
+2. Integra com uma **transportadora externa** caso necessário, usando um **Adapter**.
+3. Dispara automaticamente **notificações** para o cliente, equipe e sistema de log, usando **Observers**.
 
 ---
 
-## 🚀 Funcionalidades Esperadas
-- Um endpoint HTTP que receba o **peso** e a **modalidade** da entrega.
-- Cálculo automático do frete com base na estratégia escolhida.
-- Uso do **adapter** para integrar com a transportadora externa (quando necessário).
-- Notificação automática de todos os observadores ao concluir a entrega.
+## 🚀 Funcionalidades
+
+- `POST /pedidos` → Cria e processa um pedido
+- `GET /pedidos` → Lista todos os pedidos
+- Integração com transportadora externa (simulada)
+- Cálculo de frete via Strategy
+- Notificações automáticas com Observer
 
 ---
 
-## 🧠 Desafios Propostos
-- Implementar os três padrões de forma clara e funcional.
-- Permitir que novas estratégias, integrações ou notificadores possam ser adicionados **sem alterar o código existente**.
+## 📐 Padrões de Projeto Aplicados
+
+| Padrão     | Descrição |
+|------------|-----------|
+| **Adapter** | Permite que o sistema utilize a API da transportadora externa, mesmo com uma interface diferente. |
+| **Strategy** | Permite alterar dinamicamente o cálculo do frete sem mudar o código principal. |
+| **Observer** | Permite que várias ações (e-mail, log, notificações) sejam executadas automaticamente após um pedido ser processado. |
 
 ---
-
-## 📦 Entregáveis
-1. Código-fonte Java/Spring Boot com a implementação dos padrões.
-2. `README.md` com explicações sobre o uso dos padrões.
-3. Evidências de funcionamento (ex: logs ou prints).
-4. (Opcional) Diagrama UML mostrando os padrões usados.
-
----
-
-> Boa sorte e bom código! 🚀 Se precisar de ajuda com exemplos ou testes, fale com seu instrutor ou consulte a documentação do Spring.
-
-
