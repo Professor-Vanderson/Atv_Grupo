@@ -3,6 +3,13 @@
 ## 🎯 Objetivo
 Este projeto foi desenvolvido como parte de uma atividade prática em grupo para aplicação dos padrões de projeto **Adapter**, **Strategy** e **Observer** utilizando Java com Spring Boot.
 
+🧱 Cenário
+Você faz parte da equipe de desenvolvimento de uma plataforma de e-commerce. Seu time recebeu a missão de desenvolver o novo módulo de entregas da aplicação. Esse módulo precisa ser flexível, reutilizável e de fácil manutenção.
+Para isso, será necessário aplicar 3 padrões de projeto:
+Adapter para integrar transportadoras externas com interface incompatível.
+Strategy para calcular frete com base em diferentes estratégias de entrega.
+
+Observer para enviar notificações automáticas após o processamento de pedidos.
 ---
 
 ## 🧱 Descrição do sistema
