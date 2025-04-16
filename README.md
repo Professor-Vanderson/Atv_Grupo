@@ -3,22 +3,33 @@
 ## 🎯 Objetivo
 Este projeto foi desenvolvido como parte de uma atividade prática em grupo para aplicação dos padrões de projeto **Adapter**, **Strategy** e **Observer** utilizando Java com Spring Boot.
 
-## 🧱 Cenário
-Você faz parte da equipe de desenvolvimento de uma plataforma de e-commerce. Seu time recebeu a missão de desenvolver o novo módulo de entregas da aplicação. Esse módulo precisa ser flexível, reutilizável e de fácil manutenção.
-Para isso, será necessário aplicar 3 padrões de projeto:
-
-1. Adapter para integrar transportadoras externas com interface incompatível.
-2. Strategy para calcular frete com base em diferentes estratégias de entrega.
-3. Observer para enviar notificações automáticas após o processamento de pedidos.
 ---
 
-## 🧱 Descrição do sistema
+## 🧱 Cenário
+Você faz parte da equipe de desenvolvimento de uma plataforma de e-commerce. Seu time recebeu a missão de desenvolver o novo módulo de **entregas** da aplicação. Esse módulo precisa ser flexível, reutilizável e de fácil manutenção. Para isso, será necessário aplicar os três padrões de projeto: Adapter, Strategy e Observer.
 
-O sistema simula o processamento de pedidos de uma plataforma de e-commerce. Ao cadastrar um pedido, o sistema:
+---
 
-1. Calcula o valor do frete com base na **estratégia de entrega** escolhida (`expressa`, `economica`, `transportadora`).
-2. Integra com uma **transportadora externa** caso necessário, usando um **Adapter**.
-3. Dispara automaticamente **notificações** para o cliente, equipe e sistema de log, usando **Observers**.
+## 👥 Divisão sugerida entre os 6 membros do grupo
+
+| Membro | Responsabilidade |
+|--------|------------------|
+| 1      | Criar a entidade `Pedido` e configurar o JPA |
+| 2      | Implementar o padrão Strategy com pelo menos 3 estratégias de frete |
+| 3      | Criar a integração com uma transportadora externa utilizando Adapter |
+| 4      | Implementar os Observers (e-mail, log, notificação) |
+| 5      | Criar os Controllers e configurar os endpoints REST |
+| 6      | Testar, documentar e montar o `README.md` com as instruções de uso |
+
+---
+
+## ✅ Funcionalidades obrigatórias
+
+- Cadastro de pedidos via endpoint REST.
+- Cálculo de frete baseado no tipo de entrega informado (`expressa`, `economica`, `transportadora`).
+- Integração com transportadora externa simulada via Adapter.
+- Disparo automático de pelo menos **três observadores** (ex: e-mail, log, SMS) após o processamento de um pedido.
+- README com instruções e explicações dos padrões utilizados.
 
 ---
 
@@ -41,3 +52,41 @@ O sistema simula o processamento de pedidos de uma plataforma de e-commerce. Ao 
 | **Observer** | Permite que várias ações (e-mail, log, notificações) sejam executadas automaticamente após um pedido ser processado. |
 
 ---
+
+## 🧪 Como testar
+
+1. Rode a aplicação com `mvn spring-boot:run`.
+2. Faça uma requisição `POST`:
+
+```
+POST /pedidos
+Content-Type: application/json
+
+{
+  "cliente": "Maria",
+  "produto": "Notebook",
+  "peso": 5.0,
+  "tipoEntrega": "transportadora"
+}
+```
+
+3. Verifique no console os logs de notificação, integração e cálculo de frete.
+
+---
+
+## 👥 Integrantes do grupo
+
+| Nome | Função |
+|------|--------|
+| Aluno 1 | Entidade Pedido |
+| Aluno 2 | Strategy do frete |
+| Aluno 3 | Adapter da transportadora externa |
+| Aluno 4 | Observers (email, log, notificação) |
+| Aluno 5 | Controller REST |
+| Aluno 6 | Testes e documentação |
+
+---
+
+## 📄 Licença
+Uso acadêmico - Exercício prático de padrões de projeto.
+
